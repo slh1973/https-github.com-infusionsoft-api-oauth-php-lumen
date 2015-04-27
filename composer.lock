@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f4bffe4283258a89be31f0c0d008f3cc",
+    "hash": "4452b426863d62ce7bfc897e44352555",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -128,6 +128,98 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
+        },
+        {
+            "name": "guzzle/guzzle",
+            "version": "v3.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "4de0618a01b34aa1c8c33a3f13f396dcd3882eba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/4de0618a01b34aa1c8c33a3f13f396dcd3882eba",
+                "reference": "4de0618a01b34aa1c8c33a3f13f396dcd3882eba",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": ">=2.1"
+            },
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
+                "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
+                "guzzle/parser": "self.version",
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "*",
+                "monolog/monolog": "1.*",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "1.0.*",
+                "symfony/class-loader": "*",
+                "zendframework/zend-cache": "<2.3",
+                "zendframework/zend-log": "<2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2014-01-28 22:29:15"
         },
         {
             "name": "illuminate/auth",
@@ -1179,6 +1271,59 @@
             "time": "2015-04-16 15:42:54"
         },
         {
+            "name": "infusionsoft/php-sdk",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/infusionsoft/infusionsoft-php.git",
+                "reference": "f7690b383d7b585d721adabe925d1c8e6bbca2b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/infusionsoft/infusionsoft-php/zipball/f7690b383d7b585d721adabe925d1c8e6bbca2b0",
+                "reference": "f7690b383d7b585d721adabe925d1c8e6bbca2b0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "guzzle/guzzle": "3.8.*",
+                "lstrojny/fxmlrpc": "0.8.*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "codeception/aspect-mock": "~0.5",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "~4",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Infusionsoft": [
+                        "src",
+                        "tests"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Infusionsoft",
+                    "homepage": "https://developer.infusionsoft.com"
+                }
+            ],
+            "description": "Beta PHP SDK for the Infusionsoft",
+            "homepage": "https://developer.infusionsoft.com",
+            "keywords": [
+                "infusionsoft",
+                "sdk"
+            ],
+            "time": "2015-02-17 21:20:12"
+        },
+        {
             "name": "ircmaxell/password-compat",
             "version": "v1.0.4",
             "source": {
@@ -1390,6 +1535,68 @@
                 "storage"
             ],
             "time": "2015-03-29 14:01:43"
+        },
+        {
+            "name": "lstrojny/fxmlrpc",
+            "version": "0.8.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lstrojny/fxmlrpc.git",
+                "reference": "7b9756f5f98102be170bc798781da2eef78ab977"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lstrojny/fxmlrpc/zipball/7b9756f5f98102be170bc798781da2eef78ab977",
+                "reference": "7b9756f5f98102be170bc798781da2eef78ab977",
+                "shasum": ""
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "guzzle/guzzle": "*",
+                "kriswallsmith/buzz": "*",
+                "monolog/monolog": "*",
+                "php": ">=5.3.0",
+                "phpunit/phpunit": "3.*",
+                "psr/log": "*",
+                "zendframework/zend-http": "2.0.*",
+                "zendframework/zend-log": "2.0.*",
+                "zendframework/zendframework1": "1.*"
+            },
+            "suggest": {
+                "ext-http": "Use ext/http as HTTP client",
+                "guzzle/guzzle": "To integrate Guzzle as HTTP client",
+                "kriswallsmith/buzz": "To integrate Buzz as HTTP client",
+                "monolog/monolog": "To integrate monolog as logger",
+                "zendframework/zend-http": "To use ZF2 Zend\\Http\\Client as HTTP client",
+                "zendframework/zend-log": "To use ZF2 Zend\\Log\\Logger as a logger",
+                "zendframework/zendframework1": "To use ZF1 Zend_Http_Client as HTTP client"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "fXmlRpc": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Strojny",
+                    "email": "lstrojny@php.net",
+                    "homepage": "http://usrportage.de"
+                }
+            ],
+            "description": "Fast and tiny XML/RPC client with bridges for various HTTP clients",
+            "keywords": [
+                "api",
+                "performance",
+                "rpc",
+                "xml",
+                "xmlrpc"
+            ],
+            "time": "2013-10-04 23:29:35"
         },
         {
             "name": "monolog/monolog",
@@ -3242,7 +3449,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "infusionsoft/php-sdk": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
