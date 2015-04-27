@@ -12,6 +12,7 @@
 */
 
 $app->get('/', function() use ($app) {
+
 	// Setup a new Infusionsoft SDK object
 	$infusionsoft = new \Infusionsoft\Infusionsoft(array(
 		'clientId'     => getenv('INFUSIONSOFT_CLIENT_ID'),
@@ -32,11 +33,43 @@ $app->get('/', function() use ($app) {
 
 	if ($infusionsoft->getToken()) {
 		// Save the serialized token to the current session for subsequent requests
+		// NOTE: this can be saved in your database - make sure to serialize the entire token for easy future access
 		Session::put('token', serialize($infusionsoft->getToken()));
 
-		$infusionsoft->contacts->add(array('FirstName' => 'John', 'LastName' => 'Doe'));
+		// Now redirect the user to a page that performs some infusionsoft actions
+		return redirect()->to('/contacts');
 	}
 	else {
 		echo '<a href="' . $infusionsoft->getAuthorizationUrl() . '">Click here to connect to Infusionsoft</a>';
 	}
+
+});
+
+$app->get('/contacts', function() use ($app) {
+
+	// Setup a new Infusionsoft SDK object
+	$infusionsoft = new \Infusionsoft\Infusionsoft(array(
+		'clientId'     => getenv('INFUSIONSOFT_CLIENT_ID'),
+		'clientSecret' => getenv('INFUSIONSOFT_CLIENT_SECRET'),
+		'redirectUri'  => 'http://local.infusionsoftexample.com/',
+	));
+
+	// set the token if we have it in storage (in this case, a session)
+	$infusionsoft->setToken(unserialize(Session::get('token')));
+
+	try {
+		// retrieve a list of contacts by querying the data service
+		$contacts = $infusionsoft->data->query('Contact', 10, 0, ['FirstName' => 'John'], ['FirstName', 'LastName', 'Email', 'ID'], 'FirstName', true);
+	} catch (\Infusionsoft\TokenExpiredException $e) {
+		// refresh our access token just in case
+		$infusionsoft->refreshAccessToken();
+		// we also have to save the new token, since it's now been refreshed
+		Session::put( 'token', serialize( $infusionsoft->getToken() ) );
+
+		// retrieve the list of contacts again now that we have a new token
+		$contacts = $infusionsoft->data->query('Contact', 10, 0, ['FirstName' => 'John'], ['FirstName', 'LastName', 'Email', 'ID'], 'FirstName', true);
+	}
+
+	return $contacts;
+
 });
