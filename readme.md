@@ -4,7 +4,9 @@ This application outlines how to integrate the Infusionsoft API with an off the 
 	- an introduction to using and understanding OAuth with the Infusionsoft PHP SDK
 	- demonstrate how to decouple authorization and data requests
 
-This example is built in PHP on top of the Laravel Lumen framework. Why do an example like this inside a framework? Many production implementations require integration with an existing code base, and this demonstration illustrates how you can best utilize the features of the PHP SDK to your advantage. The Lumen framework itself is extremely light, fast, and has a number of features built in that make our examples cleaner and easier to understand, including built in composer support and autoloading.
+This application is built in PHP on top of the Laravel Lumen framework. Why create an example application like this atop a framework? Many Infusionsoft API implementations require integration with an existing application, and this example illustrates how you can best utilize the features of the PHP SDK with existing code. The Lumen framework itself is extremely light, fast, and has a number of features built in that make our examples cleaner and easier to understand, including built in composer support and autoloading.
+
+This is also a great base to fork and turn into a full-fledged Infusionsoft integration.
 
 ## Getting Started
 
@@ -13,7 +15,7 @@ You can get started with this sample application by following just a few steps:
 1. Create a new file named `.env` and duplicate all of the keys in the included `.env.example` file. Then, set all the proper values for `APP_KEY`, all keys prefixed with `DB_` and all keys prefixed with `INFUSIONSOFT_`
 2. Note that we've done some setup required by the Lumen framework, all of which happens in `/app/bootstrap/app.php`
 
-## Lumen PHP Framework
+## About the Lumen PHP Framework
 
 Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
 
