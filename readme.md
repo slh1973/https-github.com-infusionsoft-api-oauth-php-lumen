@@ -12,8 +12,11 @@ This is also a great base to fork and turn into a full-fledged Infusionsoft inte
 
 You can get started with this sample application by following just a few steps:
 
-1. Create a new file named `.env` and duplicate all of the keys in the included `.env.example` file. Then, set all the proper values for `APP_KEY`, all keys prefixed with `DB_` and all keys prefixed with `INFUSIONSOFT_`
-2. Note that we've done some setup required by the Lumen framework, all of which happens in `/app/bootstrap/app.php`
+1. Clone this repo
+2. Create a new file named `.env` and duplicate all of the keys in the included `.env.example` file. Then, set all the proper values for `APP_KEY`, all keys prefixed with `DB_` if you plan to use a database, and all keys prefixed with `INFUSIONSOFT_`
+3. Run `composer install` 
+
+Note that we've done some setup required by the Lumen framework, all of which happens in `/app/bootstrap/app.php`
 
 ## About the Lumen PHP Framework
 
