@@ -1,6 +1,6 @@
 ## Infusionsoft OAuth Miniframework Example
 
-This application outlines how to integrate the Infusionsoft API with an off the shelf PHP framework. It demonstrates how to handle the OAuth flow with multiple routes, as well as how to renew a token that we've already stored on a user record in a database. From a fundamental perspective, this example strives to accomplish two things: 
+This application outlines how to integrate the Infusionsoft API with an off the shelf PHP framework. It demonstrates how to handle the OAuth flow with multiple routes, as well as how to renew a token that we've already stored in the session. From a fundamental perspective, this example strives to accomplish two things: 
 	- an introduction to using and understanding OAuth with the Infusionsoft PHP SDK
 	- demonstrate how to decouple authorization and data requests
 
