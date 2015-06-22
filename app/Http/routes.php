@@ -33,23 +33,27 @@ $app->get('/callback', function() use($app) {
 		'redirectUri'  => getenv('INFUSIONSOFT_REDIRECT_URL'),
 	));
 
-	// If the serialized token is already available in the session storage, we tell the SDK
-	// to use that token for subsequent requests, rather than try and retrieve another one.
+	// If the serialized token is already available in the session storage,
+	// we tell the SDK to use that token for subsequent requests, rather
+	// than try and retrieve another one.
 	if (Session::has('token')) {
 		$infusionsoft->setToken(unserialize(Session::get('token')));
 	}
 
-	// If we are returning from Infusionsoft we need to exchange the code for an access token.
+	// If we are returning from Infusionsoft we need to exchange the code
+	// for an access token.
 	if (Request::has('code') and !$infusionsoft->getToken()) {
 		$infusionsoft->requestAccessToken(Request::get('code'));
 	}
 
-	// NOTE: there's some magic in the step above - the Infusionsoft SDK has not only requested an access token,
-	// but also set the token in the current Infusionsoft object, so there's no need for you to do it.
+	// NOTE: there's some magic in the step above - the Infusionsoft SDK has
+	// not only requested an access token, but also set the token in the current
+	// Infusionsoft object, so there's no need for you to do it.
 
 	if ($infusionsoft->getToken()) {
 		// Save the serialized token to the current session for subsequent requests
-		// NOTE: this can be saved in your database - make sure to serialize the entire token for easy future access
+		// NOTE: this can be saved in your database - make sure to serialize the
+		// entire token for easy future access
 		Session::put('token', serialize($infusionsoft->getToken()));
 
 		// Now redirect the user to a page that performs some Infusionsoft actions
@@ -78,8 +82,9 @@ $app->get('/contacts', function() use ($app) {
 	} catch (\Infusionsoft\TokenExpiredException $e) {
 		// Refresh our access token since we've thrown a token expired exception
 		$infusionsoft->refreshAccessToken();
-		// We also have to save the new token, since it's now been refreshed. We serialize the token to ensure
-		// the entire PHP object is saved and not accidentally converted to a string
+		// We also have to save the new token, since it's now been refreshed.
+		// We serialize the token to ensure the entire PHP object is saved
+		// and not accidentally converted to a string
 		Session::put( 'token', serialize( $infusionsoft->getToken() ) );
 
 		// Retrieve the list of contacts again now that we have a new token
