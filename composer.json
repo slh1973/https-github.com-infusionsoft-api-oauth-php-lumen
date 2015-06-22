@@ -5,8 +5,8 @@
     "license": "MIT",
     "type": "project",
     "require": {
-	    "infusionsoft/php-sdk": "dev-master",
-        "laravel/lumen-framework": "5.0.*",
+	    "infusionsoft/php-sdk": "1.0.0-beta2",
+        "laravel/lumen-framework": "5.1.*",
         "vlucas/phpdotenv": "~1.0"
     },
     "require-dev": {
